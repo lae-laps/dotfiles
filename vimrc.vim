@@ -1,5 +1,5 @@
 
-# Add this code to your ~/.vimrc file ( create it if not already )
+" Add this code to your ~/.vimrc file ( create it if not already )
 
 syntax on
 
