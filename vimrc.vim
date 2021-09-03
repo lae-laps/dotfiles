@@ -72,3 +72,4 @@ nnoremap <Leader> <Leader>- :vertical resize -5<CR>
 
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+
