@@ -1,9 +1,15 @@
-
-" Add this code to your ~/.vimrc file ( create it if not already )
-
+"         _                    
+"        (_)                   
+"  __   ___ _ __ ___  _ __ ___ 
+"  \ \ / / | '_ ` _ \| '__/ __|
+"   \ V /| | | | | | | | | (__ 
+"    \_/ |_|_| |_| |_|_|  \___|
+"
+" vim config by: laelaps
 
 syntax on
 
+set cursorline
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -61,6 +67,14 @@ inoremap < <><Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
 
+" KeyBindings for moving lines up and down with Shift+Up/Down  
+
+inoremap <S-Up> <Esc>:m-2<CR>
+inoremap <S-Down> <Esc>:m+<CR>
+
+nnoremap <S-Up> :m-2<CR>
+nnoremap <S-Down> :m+<CR>
+
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
@@ -75,4 +89,3 @@ nnoremap <Leader> <Leader>- :vertical resize -5<CR>
 
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
-
