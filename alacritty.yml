@@ -14,10 +14,10 @@ window.opacity: 0.5
 
 font:
 
-  size: 11
+  size: 6.5
 
   normal:
-    family: Fira Code
+    family: "FiraCode"
     style:  Medium
 
   bold:
@@ -27,8 +27,8 @@ font:
   italic:
     family: Fira Code
     style:  MediumItalic
-  
-  bold_italic: 
+
+  bold_italic:
     family: Fira Code
     style:  BoldItalic
 
@@ -38,15 +38,15 @@ live_config_reload: true
 
 key_bindings:
   - { key: V, mods: Control, action: Paste }
-  - { key: C, mods: Control, action: Copy } 
-  - { key: C, mods: Control|Shift, chars: "\x03" }
+  - { key: C, mods: Control, action: Copy }
+  - { key: X, mods: Control, chars: "\x03" }
   - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
 
 # Gruvbox theme for colors
 colors:
   primary:
-    # hard contrast: background = '0x1d2021'
-    background: '0x282828'
+    hard contrast: background = '0x1d2021'
+    #background: '0x282828'
     # soft contrast: background = '0x32302f'
     foreground: '0xebdbb2'
 
