@@ -1,8 +1,8 @@
-"         _                    
-"        (_)                   
-"  __   ___ _ __ ___  _ __ ___ 
+"         _
+"        (_)
+"  __   ___ _ __ ___  _ __ ___
 "  \ \ / / | '_ ` _ \| '__/ __|
-"   \ V /| | | | | | | | | (__ 
+"   \ V /| | | | | | | | | (__
 "    \_/ |_|_| |_| |_|_|  \___|
 "
 " vim config by: laelaps
@@ -67,7 +67,7 @@ inoremap < <><Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
 
-" KeyBindings for moving lines up and down with Shift+Up/Down  
+" KeyBindings for moving lines up and down with Shift+Up/Down
 
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
@@ -81,7 +81,7 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>m :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-nnoremap <silent>ps :Rg<SPACE> 
+nnoremap <silent>ps :Rg<SPACE>
 nnoremap <Leader> <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader> <Leader>- :vertical resize -5<CR>
 
