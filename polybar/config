@@ -14,15 +14,18 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #1d2021
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
 ;primary = #ffb52a
-primary = #8ec07c
+;primary = #8ec07c
+primary = #fabd2f
 secondary = #e60053
 alert = #bd2c40
+
+text = #f4c76c
 
 [bar/bar]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -33,29 +36,31 @@ height = 27
 radius = 0
 fixed-center = true
 
-;background = ${colors.background}
-background = #050505
+separator = |
+label-NAME-separator = ${colors.alert}
+
+background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 2.5
 line-color = #f00
 
 border-size = 0
-border-color = #00000000
+border-color = #000000
 
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 1
+module-margin-left = 2
 module-margin-right = 2
 
-font-0 = Hack:pixelsize=10;1
-font-1 = FiraCode:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = Hack:pixelsize=11;2:antialias=true
+font-1 = FiraCode:fontformat=truetype:size=11:antialias=true;0
+font-2 = siji:pixelsize=12;1:antialias=true
 
 modules-left = i3
 ;modules-center = i3
-modules-right =  pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = mpd pulseaudio xkeyboard memory cpu temperature wlan eth battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -73,25 +78,17 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = ${colors.primary}
-format-prefix-underline = ${colors.primary}
 
-label-layout = %layout%
-label-layout-underline = ${colors.primary}
+label-layout = : %layout%
 
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.primary}
-label-indicator-underline = ${colors.primary}
 
 [module/i3]
 type = internal/i3
@@ -102,7 +99,7 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 4
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
@@ -110,11 +107,11 @@ label-mode-background = ${colors.primary}
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 4
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-padding = 4
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -148,16 +145,14 @@ type = internal/cpu
 interval = 4
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.primary}
-label = CPU: %percentage:2%%
+label = : %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.primary}
-label = RAM: %percentage_used%%
+label = : %percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -165,9 +160,7 @@ interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.primary}
-;label-connected = %essid%
-label-connected = 🌐
+label-connected = : %essid%
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.alert}
@@ -208,8 +201,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.primary}
+format-prefix-foreground = ${colors.text}
 
 label = %date% %time%
 
@@ -217,13 +209,13 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume = 🔊 %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 12
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -231,7 +223,7 @@ bar-volume-foreground-3 = #55aa55
 bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
+bar-volume-gradient = true
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
@@ -244,17 +236,15 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 98
+full-at = 97
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${colors.primary}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -276,10 +266,9 @@ animation-discharging-framerate = 750
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 70
 
 format = <ramp> <label>
-format-underline = ${colors.primary}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${colors.alert}
 
@@ -287,7 +276,7 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.alert}
 
-ramp-0 = 
+ramp-0 = 🔥
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
