@@ -58,6 +58,7 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 let mapleader = " "
 let g:netrw_browse_split = 2
 let g:netrw_winsize = 25
+let g:gruvbox_contrast_dark = 'har'
 
 inoremap ( ()<Esc>i
 inoremap { {}<Esc>i
@@ -89,3 +90,10 @@ nnoremap <Leader> <Leader>- :vertical resize -5<CR>
 
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+
+" Key remaps
+
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
