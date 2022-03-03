@@ -16,18 +16,19 @@
 ;background = ${xrdb:color0:#222}
 background = #1d2021
 background-alt = #444
+background-vim = #333
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
 ;primary = #ffb52a
-;primary = #8ec07c
+contrast = #07f702
 primary = #fabd2f
 secondary = #e60053
 alert = #bd2c40
 
 text = #f4c76c
 
-[bar/bar]
+[bar/full]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
@@ -37,12 +38,11 @@ radius = 0
 fixed-center = true
 
 separator = |
-label-NAME-separator = ${colors.alert}
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 2.5
+line-size = 2
 line-color = #f00
 
 border-size = 0
@@ -59,8 +59,59 @@ font-1 = FiraCode:fontformat=truetype:size=11:antialias=true;0
 font-2 = siji:pixelsize=12;1:antialias=true
 
 modules-left = i3
-;modules-center = i3
+modules-center = vim
 modules-right = mpd pulseaudio xkeyboard memory cpu temperature wlan eth battery date powermenu
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-down = bspwm-deskprev
+
+;scroll-upcontrast-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[bar/minimal]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = true
+
+separator = |
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+border-size = 0
+border-color = #000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 2
+module-margin-right = 2
+
+font-0 = Hack:pixelsize=11;2:antialias=true
+font-1 = FiraCode:fontformat=truetype:size=11:antialias=true;0
+font-2 = siji:pixelsize=12;1:antialias=true
+
+modules-left = i3
+modules-center = vim
+modules-right = mpd pulseaudio xkeyboard wlan eth battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -77,6 +128,20 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+
+;xwindow -> Shows current application
+;[module/xwindow]
+;type = internal/xwindow
+;label = " %title:0:70:…%  "
+
+[module/vim]
+type = custom/script
+exec = cat ~/.polyvim/status
+interval = 2
+format-underline = ${colors.contrast}
+format-background = ${colors.background-vim}
+format-padding = 2
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -142,14 +207,14 @@ label-song-ellipsis = true
 
 [module/cpu]
 type = internal/cpu
-interval = 4
+interval = 6
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 label = : %percentage:2%%
 
 [module/memory]
 type = internal/memory
-interval = 2
+interval = 6
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 label = : %percentage_used%%
@@ -192,7 +257,7 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
 date =
 date-alt = " %Y-%m-%d"
@@ -217,18 +282,23 @@ label-muted-foreground = #666
 
 bar-volume-width = 12
 bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-1 = #33cc33
+bar-volume-foreground-2 = #66ff33
+bar-volume-foreground-3 = #99ff33
+bar-volume-foreground-4 = #ccff33
+bar-volume-foreground-5 = #ffff00
+bar-volume-foreground-6 = #ffcc66
+bar-volume-foreground-7 = #ff9933
+bar-volume-foreground-8 = #ff6600
+bar-volume-foreground-9 = #ff4000
+bar-volume-foreground-10 = #ff0000
+
 bar-volume-gradient = true
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-fill = -
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = -
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
