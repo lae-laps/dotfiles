@@ -1,6 +1,6 @@
 # Dotfiles
 These are a series of my config files for i3-gaps window manager with polybar as the bar.
-Tested on arch linux
+They currently work in arch linux.
 
 ## Autoinstall
 
