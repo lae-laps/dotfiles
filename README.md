@@ -10,3 +10,5 @@ To use them, you can install them manually or :
 `cd dotfiles`
 
 `bash install.sh`
+
+![Alt text](desktop.jpg?raw=true "Title")
