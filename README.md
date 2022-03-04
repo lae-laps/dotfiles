@@ -11,4 +11,4 @@ To use them, you can install them manually or :
 
 `bash install.sh`
 
-![Alt text](desktop.jpg?raw=true "Title")
+![Could not display image](desktop.png?raw=true "Title")
