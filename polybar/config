@@ -15,13 +15,15 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 background = #1d2021
+;background = #aa1d2021
+
 background-alt = #444
 background-vim = #333
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
 ;primary = #ffb52a
-contrast = #07f702
+contrast = #fabd2f
 primary = #fabd2f
 secondary = #e60053
 alert = #bd2c40
@@ -31,13 +33,13 @@ text = #f4c76c
 [bar/full]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 28
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
 fixed-center = true
 
-separator = |
+separator = " "
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -46,17 +48,17 @@ line-size = 2
 line-color = #f00
 
 border-size = 0
-border-color = #000000
+border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 4
 
 module-margin-left = 2
 module-margin-right = 2
 
 font-0 = Hack:pixelsize=11;2:antialias=true
 font-1 = FiraCode:fontformat=truetype:size=11:antialias=true;0
-font-2 = siji:pixelsize=12;1:antialias=true
+font-2 = siji:pixelsize=13;1:antialias=true
 
 modules-left = i3
 modules-center = vim
@@ -148,8 +150,9 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
+format-prefix-foreground = ${colors.background-alt}
 
-label-layout = : %layout%
+label-layout = %layout%
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -210,14 +213,14 @@ type = internal/cpu
 interval = 6
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-label = : %percentage:2%%
+label =  %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 6
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-label = : %percentage_used%%
+label =  %percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -225,7 +228,7 @@ interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-label-connected = : %essid%
+label-connected =
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.alert}
@@ -237,7 +240,8 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+
+ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
