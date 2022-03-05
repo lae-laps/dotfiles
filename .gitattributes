@@ -1,5 +1,5 @@
 *.yml linguist-detectable=true
 *.yml linguist-language=YAML
 
-*conf linguist-detectable=true
-*conf linguist-language=INI
+* linguist-detectable=true
+* linguist-language=INI
