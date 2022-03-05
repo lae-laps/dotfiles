@@ -23,8 +23,9 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
-
+set paste
 set colorcolumn=120
+
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -97,3 +98,17 @@ noremap ; l
 noremap l k
 noremap k j
 noremap j h
+
+let filename = @%
+
+"augroup PolyVim
+ "   autocmd!
+  "  autocmd VimEnter * call system('echo' . filename . '> ~/myfile.txt')
+   " autocmd VimLeave * call system('echo filename > ~/leftvim.txt')
+"augroup END
+
+if exists('theme') && theme == 'light'
+    set background=light
+else
+    set background=dark
+endif
