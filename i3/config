@@ -1,4 +1,5 @@
 # i3 config made by laelaps
+# Set it at $HOME/.config/i3/config
 
 exec --no-startup-id $HOME/scripts/16script/16script.sh $(< ~/.cache/16script/lastuse)
 
