@@ -23,8 +23,10 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
-set paste
+"set paste
 set colorcolumn=120
+
+set ttymouse=sgr
 
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
@@ -36,20 +38,21 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
-Plug 'jremmen/vim-ripgrep'
-Plug 'tpope/vim-fugitive'
-Plug 'leafgarland/typescript-vim'
-Plug 'vim-utils/vim-man'
-Plug 'lyuts/vim-rtags'
-Plug 'git@github.com:kien/ctrlp.vim.git'
-Plug 'git@github.com:Valloric/YouCompleteMe.git'
-Plug 'mbbill/undotree'
+    Plug 'adrian5/oceanic-next-vim' "optional colorscheme
+    Plug 'morhetz/gruvbox'
+    Plug 'Yggdroot/indentLine'
+    Plug 'jremmen/vim-ripgrep'
+    Plug 'tpope/vim-fugitive'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'vim-utils/vim-man'
+    Plug 'lyuts/vim-rtags'
+    Plug 'git@github.com:Valloric/YouCompleteMe.git'
+    Plug 'mbbill/undotree'
 
 call plug#end()
 
-colorscheme gruvbox
-set background=dark
+let g:indentLine_faster     = 1
+let g:indentLine_setConceal = 1 
 
 if executable('rg')
     let g:rg_derive_root='true'
@@ -77,10 +80,10 @@ inoremap <S-Down> <Esc>:m+<CR>
 nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
 
-nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>; :wincmd ;<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>m :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <silent>ps :Rg<SPACE>
@@ -99,9 +102,9 @@ noremap l k
 noremap k j
 noremap j h
 
-let filename = @%
+let filename = @% 
 
-"augroup PolyVim
+"augroup PolyVim 
  "   autocmd!
   "  autocmd VimEnter * call system('echo' . filename . '> ~/myfile.txt')
    " autocmd VimLeave * call system('echo filename > ~/leftvim.txt')
@@ -112,3 +115,9 @@ if exists('theme') && theme == 'light'
 else
     set background=dark
 endif
+
+colorscheme gruvbox
+"colorscheme oceanicnext
+
+set background=dark
+"hi Normal guibg=NONE ctermbg=NONE
