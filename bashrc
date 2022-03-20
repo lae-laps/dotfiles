@@ -4,7 +4,7 @@
 #   | '_ \ / _` / __| '_ \| '__/ __|
 #  _| |_) | (_| \__ \ | | | | | (__ 
 # (_)_.__/ \__,_|___/_| |_|_|  \___|
-# by: laelaps
+# by laelaps
 
 [[ $- != *i* ]] && return
 
@@ -21,6 +21,7 @@ alias ll="ls -lA"
 alias bashrc="vim ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
 alias i3-config="vim ~/.config/i3/config"
-alias vim="bash ~/.polyvim/start.sh"
+
+alias vim="bash ~/.polyvim/start.sh" # polyvim repo will be added later
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
