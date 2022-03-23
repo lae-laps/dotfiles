@@ -24,9 +24,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 "set paste
-set colorcolumn=120
-
-set ttymouse=sgr
+set colorcolumn=500
 
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
@@ -38,9 +36,11 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-    Plug 'adrian5/oceanic-next-vim' "optional colorscheme
-    Plug 'morhetz/gruvbox'
-    Plug 'Yggdroot/indentLine'
+    Plug 'adrian5/oceanic-next-vim'       " colorscheme
+    Plug 'drewtempelmeyer/palenight.vim'  " colorscheme
+    Plug 'morhetz/gruvbox'                " colorscheme
+    Plug 'Yggdroot/indentLine'            " Indent lines
+    Plug 'vim-airline/vim-airline'        " Status line
     Plug 'jremmen/vim-ripgrep'
     Plug 'tpope/vim-fugitive'
     Plug 'leafgarland/typescript-vim'
@@ -54,6 +54,8 @@ call plug#end()
 let g:indentLine_faster     = 1
 let g:indentLine_setConceal = 1 
 
+let g:airline_powerline_fonts = 1
+
 if executable('rg')
     let g:rg_derive_root='true'
 endif
@@ -62,15 +64,17 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 let mapleader = " "
 let g:netrw_browse_split = 2
 let g:netrw_winsize = 25
-let g:gruvbox_contrast_dark = 'har'
+let g:gruvbox_contrast_dark = 'hard'
 
-inoremap ( ()<Esc>i
-inoremap { {}<Esc>i
-inoremap {<CR> {<CR>}<Esc>O
-inoremap [ []<Esc>i
-inoremap < <><Esc>i
-inoremap ' ''<Esc>i
-inoremap " ""<Esc>i
+" Complete symbols
+
+"inoremap ( ()<Esc>i
+"inoremap { {}<Esc>i
+"inoremap {<CR> {<CR>}<Esc>O
+"inoremap [ []<Esc>i
+"inoremap < <><Esc>i
+"inoremap ' ''<Esc>i
+"inoremap " ""<Esc>i
 
 " KeyBindings for moving lines up and down with Shift+Up/Down
 
@@ -116,8 +120,12 @@ else
     set background=dark
 endif
 
+set background=dark
+
+"colorscheme palenight
 colorscheme gruvbox
 "colorscheme oceanicnext
 
-set background=dark
-"hi Normal guibg=NONE ctermbg=NONE
+let g:airline_theme = "gruvbox"
+
+hi Normal guibg=NONE ctermbg=NONE
