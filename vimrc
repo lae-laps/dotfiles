@@ -1,11 +1,17 @@
-"         _
-"        (_)
-"  __   ___ _ __ ___  _ __ ___
-"  \ \ / / | '_ ` _ \| '__/ __|
-"   \ V /| | | | | | | | | (__
-"    \_/ |_|_| |_| |_|_|  \___|
-"
-" vim config by: laelaps
+"              _       _
+"   __  _    / /      (_)
+"  /  \/ |  / /__   ___ _ __ ___  _ __ ___
+" |_/ \_/  / / \ \ / / | '_ ` _ \| '__/ __|
+"         / / _ \ V /| | | | | | | | | (__
+"        /_/ (_) \_/ |_|_| |_| |_|_|  \___|
+" vim config                     by: laelaps
+
+" This config file currently works in vim -> tested in vim 8.2 forwards
+" To use it for neovim, move it to ~/.config/nvim/init.vim 
+" To use with both vim and neovim move to ~/.vimrc and make a 
+" symlink at ~/.config/nvim/init.vim
+
+" set encoding to unicode
 
 set encoding=utf-8
 
@@ -47,6 +53,7 @@ call vundle#begin()
 call vundle#end()           
 filetype plugin indent on
 
+" Plugins
 call plug#begin('~/.vim/plugged')
     
     Plug 'VundleVim/Vundle.vim'
@@ -116,27 +123,35 @@ nnoremap <Leader> <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader> <Leader>- :vertical resize -5<CR>
 
 
-" YCM
+" You Complete Me ( YCM ) config
 
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 
-" Key remaps
+" Key remaps from hjkl to jkl;
 
 noremap ; l
 noremap l k
 noremap k j
 noremap j h
 
+" Key remaps for spanish keyboard ( uncomment if neccesary ) :
+
+"noremap ñ l
+"noremap l k
+"noremap k j
+"noremap j h
+
 let filename = @% 
 
 "augroup PolyVim 
- "   autocmd!
-  "  autocmd VimEnter * call system('echo' . filename . '> ~/myfile.txt')
-   " autocmd VimLeave * call system('echo filename > ~/leftvim.txt')
+"   autocmd!
+"   autocmd VimEnter * call system('echo' . filename . '> ~/myfile.txt')
+"   autocmd VimLeave * call system('echo filename > ~/leftvim.txt')
 "augroup END
 
 " Enable true colors
+" Comment out to remove true colors
 if (has("termguicolors"))
   set termguicolors
 endif
@@ -149,6 +164,8 @@ else
 endif
 
 set background=dark
+
+" Select colorscheme here -> 3 possible colorshemes -> default = gruvbox
 
 "colorscheme palenight
 colorscheme gruvbox
