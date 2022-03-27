@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 PREV_TOTAL=0
 PREV_IDLE=0
 
@@ -11,11 +10,9 @@ if [[ -f "${cpuFile}" ]]; then
   PREV_IDLE=$(echo "${fileCont}" | tail -n 1)
 fi
 
-CPU=(`cat /proc/stat | grep '^cpu '`) # Get the total CPU statistics.
-unset CPU[0]                          # Discard the "cpu" prefix.
-IDLE=${CPU[4]}                        # Get the idle CPU time.
-
-# Calculate the total CPU time.
+CPU=(`cat /proc/stat | grep '^cpu '`) 
+unset CPU[0]  
+IDLE=${CPU[4]}  
 TOTAL=0
 
 for VALUE in "${CPU[@]:0:4}"; do
@@ -39,7 +36,5 @@ else
     echo "?"
 	fi
 fi
-
-# Remember the total and idle CPU times for the next check.
 echo "${TOTAL}" > "${cpuFile}"
 echo "${IDLE}" >> "${cpuFile}"
