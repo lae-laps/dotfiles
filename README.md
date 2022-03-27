@@ -1,6 +1,13 @@
 # Dotfiles
 These are a series of my config files for i3-gaps window manager with polybar as the bar.
 
+  * *wm*: i3-gaps
+  * *bar*: polybar
+  * *terminal*: kitty
+  * *launcher*: rofi
+  * *editor*: vim
+  * *notifications*: dunst
+
 ## Autoinstall
 
 There is an autoinstaller tool for these config files.
