@@ -1,12 +1,4 @@
-#    _               _              
-#   | |             | |             
-#   | |__   __ _ ___| |__  _ __ ___ 
-#   | '_ \ / _` / __| '_ \| '__/ __|
-#  _| |_) | (_| \__ \ | | | | | (__ 
-# (_)_.__/ \__,_|___/_| |_|_|  \___|
-# by: laelaps
-
-# If not running interactively, don't do anything
+# ~/.bashrc config ->  by: lae-laps
 [[ $- != *i* ]] && return
 
 # End of prompt ( PS1 )
