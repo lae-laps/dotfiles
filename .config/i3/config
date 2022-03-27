@@ -1,12 +1,18 @@
-# i3 config made by laelaps
+#6 i3 config made by laelaps
 
 exec --no-startup-id $HOME/scripts/16script/16script.sh $(< ~/.cache/16script/lastuse)
 
+# custom startup script
 exec --no-startup-id $HOME/.on_startup.sh
 
+# start dunst notification daemon
+exec --no-startup-id dunst
+
+# start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec_always --no-startup-id picom -f
+# start picom with experimental features for blur
+exec_always --no-startup-id picom --experimental-backend -f
 
 # This line enables tap to click in trackpad -> To find your device use xinput
 exec --no-startup-id xinput set-prop "Synaptics TM3289-021" "libinput Tapping Enabled" 1
@@ -14,7 +20,7 @@ exec --no-startup-id xinput set-prop "Synaptics TM3289-021" "libinput Tapping En
 # Set wallpaper
 #exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
 #exec --no-startup-id feh --bg-fill $HOME/data/pictures/darkfox.png
-exec --no-startup-id feh --bg-fill $HOME/data/pictures/net.jpeg
+exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/net.jpeg
 
 ## Colors
 # Set colors from xrdb. Colors must be set in xrdb before i3 config is loaded.
@@ -262,8 +268,8 @@ bindsym $mod+Ctrl+Right resize shrink width 5 px or 5 ppt
 
 bindsym Print				exec --no-startup-id flameshot gui
 bindsym $mod+Ctrl+Return	exec --no-startup-id pcmanfm
-bindsym $mod+m              exec --no-startup-id ~/.config/rofi/menu_powermenu
-bindsym $mod+n              exec --no-startup-id i3lock -i $HOME/data/pictures/borealis.jpg
+bindsym $mod+m              exec --no-startup-id ~/.config/rofi/powermenu
+bindsym $mod+n              exec --no-startup-id i3lock -i $HOME/data/pictures/wallpapers/borealis.jpg
 #bindsym $mod+n              exec --no-startup-id ~/.lock/lock
 
 # Change keyboard layout
