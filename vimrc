@@ -89,7 +89,7 @@ let g:gruvbox_contrast_dark = 'hard'
 " Complete symbols
 
 "inoremap ( ()<Esc>i
-"inoremap { {}<Esc>i
+inoremap { {}<Esc>i
 "inoremap {<CR> {<CR>}<Esc>O
 "inoremap [ []<Esc>i
 "inoremap < <><Esc>i
@@ -99,20 +99,22 @@ let g:gruvbox_contrast_dark = 'hard'
 " KeyBindings for moving lines up and down with Shift+Up/Down
 
 "inoremap <S-Up> <Esc>:m-2<CR>
-"inoremap <S-Down> <Esc>:m+<CR>
+"inoremap <S-Down> <Esc>:m+1<CR>
 
 nnoremap <S-Up>   :m-2<CR>
 nnoremap <S-Down> :m+1<CR>
 
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>; :wincmd ;<CR>
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>m :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <silent>ps :Rg<SPACE>
 nnoremap <Leader> <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader> <Leader>- :vertical resize -5<CR>
+
 
 " YCM
 
