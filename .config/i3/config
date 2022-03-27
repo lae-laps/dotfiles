@@ -1,4 +1,4 @@
-#6 i3 config made by laelaps
+# i3 config made by laelaps
 
 exec --no-startup-id $HOME/scripts/16script/16script.sh $(< ~/.cache/16script/lastuse)
 
