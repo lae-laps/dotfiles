@@ -1,17 +1,11 @@
-"              _       _
-"   __  _    / /      (_)
-"  /  \/ |  / /__   ___ _ __ ___  _ __ ___
-" |_/ \_/  / / \ \ / / | '_ ` _ \| '__/ __|
-"         / / _ \ V /| | | | | | | | | (__
-"        /_/ (_) \_/ |_|_| |_| |_|_|  \___|
-" vim config                     by: laelaps
-
-" This config file currently works in vim -> tested in vim 8.2 forwards
-" To use it for neovim, move it to ~/.config/nvim/init.vim 
-" To use with both vim and neovim move to ~/.vimrc and make a 
-" symlink at ~/.config/nvim/init.vim
-
-" set encoding to unicode
+"         _
+"        (_)
+"  __   ___ _ __ ___  _ __ ___
+"  \ \ / / | '_ ` _ \| '__/ __|
+"   \ V /| | | | | | | | | (__
+"    \_/ |_|_| |_| |_|_|  \___|
+"
+" vim config by: laelaps
 
 set encoding=utf-8
 
@@ -49,15 +43,14 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
-    Plugin 'Valloric/YouCompleteMe'
+"    Plugin 'Valloric/YouCompleteMe'
 call vundle#end()           
 filetype plugin indent on
 
-" Plugins
 call plug#begin('~/.vim/plugged')
     
     Plug 'VundleVim/Vundle.vim'
-    Plug 'Valloric/YouCompleteMe'
+"    Plug 'Valloric/YouCompleteMe'
     Plug 'adrian5/oceanic-next-vim'       " colorscheme
     Plug 'drewtempelmeyer/palenight.vim'  " colorscheme
     Plug 'morhetz/gruvbox'                " colorscheme
@@ -71,9 +64,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'mbbill/undotree'
 call plug#end()
 
-let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf=0
-let g:ycm_python_binary_path='/usr/bin/python3'
+"let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
+"let g:ycm_confirm_extra_conf=0
+"let g:ycm_python_binary_path='/usr/bin/python3'
 
 let g:indentLine_faster          = 1
 let g:indentLine_setConceal      = 1 
@@ -95,9 +88,9 @@ let g:gruvbox_contrast_dark = 'hard'
 
 " Complete symbols
 
+
 "inoremap ( ()<Esc>i
 inoremap { {}<Esc>i
-"inoremap {<CR> {<CR>}<Esc>O
 "inoremap [ []<Esc>i
 "inoremap < <><Esc>i
 "inoremap ' ''<Esc>i
@@ -123,35 +116,27 @@ nnoremap <Leader> <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader> <Leader>- :vertical resize -5<CR>
 
 
-" You Complete Me ( YCM ) config
+" YCM
 
-nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+"nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
+"nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 
-" Key remaps from hjkl to jkl;
+" Key remaps
 
 noremap ; l
 noremap l k
 noremap k j
 noremap j h
 
-" Key remaps for spanish keyboard ( uncomment if neccesary ) :
-
-"noremap ñ l
-"noremap l k
-"noremap k j
-"noremap j h
-
 let filename = @% 
 
 "augroup PolyVim 
-"   autocmd!
-"   autocmd VimEnter * call system('echo' . filename . '> ~/myfile.txt')
-"   autocmd VimLeave * call system('echo filename > ~/leftvim.txt')
+ "   autocmd!
+  "  autocmd VimEnter * call system('echo' . filename . '> ~/myfile.txt')
+   " autocmd VimLeave * call system('echo filename > ~/leftvim.txt')
 "augroup END
 
 " Enable true colors
-" Comment out to remove true colors
 if (has("termguicolors"))
   set termguicolors
 endif
@@ -164,8 +149,6 @@ else
 endif
 
 set background=dark
-
-" Select colorscheme here -> 3 possible colorshemes -> default = gruvbox
 
 "colorscheme palenight
 colorscheme gruvbox
