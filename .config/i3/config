@@ -2,9 +2,6 @@
 
 exec --no-startup-id $HOME/scripts/16script/16script.sh $(< ~/.cache/16script/lastuse)
 
-# custom startup script
-exec --no-startup-id $HOME/.on_startup.sh
-
 # start dunst notification daemon
 exec --no-startup-id dunst
 
@@ -20,7 +17,8 @@ exec --no-startup-id xinput set-prop "Synaptics TM3289-021" "libinput Tapping En
 # Set wallpaper
 #exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
 #exec --no-startup-id feh --bg-fill $HOME/data/pictures/darkfox.png
-exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/net.jpeg
+#exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/parrot.jpg
+exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/default.jpg
 
 ## Colors
 # Set colors from xrdb. Colors must be set in xrdb before i3 config is loaded.
@@ -56,14 +54,14 @@ set_from_resource $base0E color5  #000000
 set_from_resource $base0F color17 #000000
 
 #                       class   border  backgr. text indicator
-client.focused          $base02 $base02 $base00 $base02
+client.focused          $base0A $base0A $base00 $base0A
 client.focused_inactive $base03 $base03 $base05 $base03
 client.unfocused        $base03 $base03 $base05 $base03
 client.urgent           $base01 $base01 $base05 $base00
 
-
+# Window frame size -> normal = 2
 new_window pixel 2
-new_float  pixel 2
+new_float  pixel 0
 
 #for_window [class="firefox"] border pixel 1
 
@@ -255,6 +253,10 @@ mode "resize" {
 
     bindsym $mod+r mode "resize"
 
+# Default floating windows
+
+for_window [class="Pcmanfm"] floating enable
+
 ## Define custom shortcuts
 
 # Resizing
@@ -266,11 +268,11 @@ bindsym $mod+Ctrl+Right resize shrink width 5 px or 5 ppt
 
 # Applications
 
-bindsym Print				exec --no-startup-id flameshot gui
+bindsym Print				exec --no-startup-id scrot ~/data/pictures/captures
 bindsym $mod+Ctrl+Return	exec --no-startup-id pcmanfm
 bindsym $mod+m              exec --no-startup-id ~/.config/rofi/powermenu
-bindsym $mod+n              exec --no-startup-id i3lock -i $HOME/data/pictures/wallpapers/borealis.jpg
-#bindsym $mod+n              exec --no-startup-id ~/.lock/lock
+#bindsym $mod+n              exec --no-startup-id i3lock -i $HOME/data/pictures/wallpapers/borealis.jpg
+bindsym $mod+n              exec --no-startup-id ~/.lock/lock
 
 # Change keyboard layout
 
@@ -280,13 +282,13 @@ bindsym $mod+Shift+u    exec setxkbmap -layout es
 ## Define custom gaps
 
 gaps inner 8
-gaps outer 0
+gaps outer 2
 
 smart_gaps on
 smart_borders on
 
 workspace 10 gaps inner 20
-workspace 10 gaps outer 220
+workspace 10 gaps outer 46
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
