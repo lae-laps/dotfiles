@@ -152,7 +152,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n<i>%a</i>"
+    format = "<b>%a</b>\n<i>%b</i>"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -197,8 +197,8 @@
     max_icon_size = 42 
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
-
+    icon_path = /usr/share/icons/Adwaita/16x16/status
+    
     ### History ###
 
     # Should a notification popped up from history be sticky or timeout
@@ -300,9 +300,9 @@
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#285577"
+    background = "#88282828"
     foreground = "#ffffff"
-    timeout = 22
+    timeout = 16
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
@@ -436,4 +436,4 @@
 #    appname = "some_volume_notifiers"
 #    set_stack_tag = "volume"
 #
-# vim: ft=cfgclear
+# vim: ft=cfg
