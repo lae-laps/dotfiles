@@ -20,7 +20,7 @@ export LC_ALL="en_US.UTF-8"
 prompt_end="#"
 
 #PS1="\033[38;5;82m \w\033[m \033[38;5;9m$prompt_end \033[m"
-PS1="\033[38;5;27m \W\033[m \033[38;5;196m$prompt_end \033[m"
+PS1="\033[38;5;27m \W\033[m \033[38;5;196m$prompt_end \033[m" # edit to solve wrapp around problem
 
 export PATH=${HOME}/tools/vim/bin:$PATH
 
