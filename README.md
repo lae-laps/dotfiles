@@ -16,6 +16,10 @@ This project once made should give you a full tui with options to configure and 
 
 ## Some examples:
 
-![error displaying image -> images/desktop_transparent.png](images/desktop_transparent.png?raw=true "Title")
-
 ![error displaying image -> images/desktop_grey.png](images/desktop_grey.png?raw=true "Title")
+
+![error displaying image -> images/desktop_grey.png](images/blue-minimalist.png?raw=true "Title")
+
+![error displaying image -> images/desktop_grey.png](images/terminals-black.png?raw=true "Title")
+
+![error displaying image -> images/desktop_transparent.png](images/desktop_transparent.png?raw=true "Title")
