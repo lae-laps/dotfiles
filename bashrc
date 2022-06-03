@@ -20,7 +20,7 @@ PS1="\033[38;5;27m \w\033[m \033[38;5;196m# \033[m"
 
 export PATH=${HOME}/tools/vim/bin:$PATH
 
-# Aliases
+# Aliases ( include color auto for some common CLI tools )
 alias ls='ls --color=auto'
 alias ll="ls -lAh"
 alias bashrc="vim ~/.bashrc"
