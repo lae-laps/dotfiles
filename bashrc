@@ -1,4 +1,3 @@
- ~ # cat .bashrc
 #    _               _              
 #   | |             | |             
 #   | |__   __ _ ___| |__  _ __ ___ 
@@ -16,11 +15,8 @@
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-# End of prompt ( PS1 )
-prompt_end="#"
-
 #PS1="\033[38;5;82m \w\033[m \033[38;5;9m$prompt_end \033[m"
-PS1="\033[38;5;27m \W\033[m \033[38;5;196m$prompt_end \033[m" # edit to solve wrapp around problem
+PS1="\033[38;5;27m \w\033[m \033[38;5;196m# \033[m"
 
 export PATH=${HOME}/tools/vim/bin:$PATH
 
@@ -38,15 +34,12 @@ alias sd="sudo !!"
 alias please="sudo"
 #alias vim="bash ~/.polyvim/start.sh"
 alias v="vim"
-
-alias clean="rm -rf ~/Documents && rm -rf ~/Desktop && rm -rf ~/Downloads"
-
+alias grep='grep --color=auto'
+alias ip='ip -color=auto'
 alias build="g++ -o main main.cpp"
-
 alias push="git push"
 alias commit="git add --all && git commit -m" # needs description
-
 alias mod1="feh --bg-fill ~/data/pictures/wallpapers/anon.jpg"
 alias kssh="kitty +kitten ssh"
-
 alias potion="/home/arch/.potion/bin/potion"
+alias clean="rm -rf ~/Documents && rm -rf ~/Desktop && rm -rf ~/Downloads && rm ~/dump.rdb && rm ~/slw.saves && rm ~/backup.lock && rm ~/salwyrr.properties.backup" 
