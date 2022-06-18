@@ -150,9 +150,10 @@ endif
 
 set background=dark
 
-"colorscheme palenight
-colorscheme gruvbox
+colorscheme palenight
+"colorscheme gruvbox
 "colorscheme oceanicnext
+"colorscheme monokai
 
 let g:airline_theme = "gruvbox"
 
