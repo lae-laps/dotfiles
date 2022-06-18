@@ -20,7 +20,7 @@ PS1="\033[38;5;27m \w\033[m \033[38;5;196m# \033[m"
 
 export PATH=${HOME}/tools/vim/bin:$PATH
 
-# Aliases ( include color auto for some common CLI tools )
+# Aliases
 alias ls='ls --color=auto'
 alias ll="ls -lAh"
 alias bashrc="vim ~/.bashrc"
@@ -33,6 +33,7 @@ alias sd="sudo !!"
 #alias neofetch="neofetch | lolcat"
 alias please="sudo"
 #alias vim="bash ~/.polyvim/start.sh"
+alias feh="feh --scale-down"
 alias v="vim"
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
@@ -43,3 +44,6 @@ alias mod1="feh --bg-fill ~/data/pictures/wallpapers/anon.jpg"
 alias kssh="kitty +kitten ssh"
 alias potion="/home/arch/.potion/bin/potion"
 alias clean="rm -rf ~/Documents && rm -rf ~/Desktop && rm -rf ~/Downloads && rm ~/dump.rdb && rm ~/slw.saves && rm ~/backup.lock && rm ~/salwyrr.properties.backup" 
+
+# Start the starship prompt
+#eval "$(starship init bash)"
