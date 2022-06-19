@@ -48,14 +48,18 @@ call vundle#end()
 filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
-    
+    Plug 'preservim/nerdtree'                       " nerdtree itself
+    Plug 'ryanoasis/vim-devicons'                   " icons for nerdtree
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " improve nerdtree icons with colors
     Plug 'VundleVim/Vundle.vim'
-"    Plug 'Valloric/YouCompleteMe'
-    Plug 'adrian5/oceanic-next-vim'       " colorscheme
-    Plug 'drewtempelmeyer/palenight.vim'  " colorscheme
-    Plug 'morhetz/gruvbox'                " colorscheme
-    Plug 'Yggdroot/indentLine'            " Indent lines
-    Plug 'vim-airline/vim-airline'        " Status line
+    Plug 'wfxr/minimap.vim'                         " minimap like VsCode in right
+    
+    "    Plug 'Valloric/YouCompleteMe'                  " code completion  
+    Plug 'adrian5/oceanic-next-vim'                 " colorscheme
+    Plug 'drewtempelmeyer/palenight.vim'            " colorscheme
+    Plug 'morhetz/gruvbox'                          " colorscheme
+    Plug 'Yggdroot/indentLine'                      " Indent lines
+    Plug 'vim-airline/vim-airline'                  " Status line
     Plug 'jremmen/vim-ripgrep'
     Plug 'tpope/vim-fugitive'
     Plug 'leafgarland/typescript-vim'
@@ -86,8 +90,13 @@ let g:netrw_winsize = 25
 
 let g:gruvbox_contrast_dark = 'hard'
 
-" Complete symbols
+" Minimap Config
 
+let g:minimap_width = 10
+let g:minimap_auto_start = 1
+let g:minimap_auto_start_win_enter = 1
+
+" Complete symbols
 
 "inoremap ( ()<Esc>i
 inoremap { {}<Esc>i
@@ -108,6 +117,10 @@ nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+
+"open NERDTree on F2
+
+nmap <F2> :NERDTreeToggle<CR>
 
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>m :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
@@ -130,6 +143,11 @@ noremap j h
 
 let filename = @% 
 
+" shortcuts to run different projects
+
+nnoremap gr :!go run .  
+nnoremap cr :!gcc -o % %
+
 "augroup PolyVim 
  "   autocmd!
   "  autocmd VimEnter * call system('echo' . filename . '> ~/myfile.txt')
@@ -150,10 +168,13 @@ endif
 
 set background=dark
 
-colorscheme palenight
+"colorscheme palenight
 "colorscheme gruvbox
-"colorscheme oceanicnext
+colorscheme oceanicnext
 "colorscheme monokai
+"colorscheme onedark
+"colorscheme tokyobones
+"colorscheme phosphor
 
 let g:airline_theme = "gruvbox"
 
