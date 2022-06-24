@@ -2,4 +2,4 @@
 *.yml linguist-language=YAML
 
 *.ini linguist-detectable=true
-*.ini linguist-language=INI
+*.ini linguist-language=ini
