@@ -51,9 +51,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'                       " nerdtree itself
     Plug 'ryanoasis/vim-devicons'                   " icons for nerdtree
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " improve nerdtree icons with colors
-    Plug 'VundleVim/Vundle.vim'
-    Plug 'wfxr/minimap.vim'                         " minimap like VsCode in right
-    
+    Plug 'VundleVim/Vundle.vim'                     " git plugin
+    "Plug 'wfxr/minimap.vim'                         " minimap like VsCode in right
     "    Plug 'Valloric/YouCompleteMe'                  " code completion  
     Plug 'adrian5/oceanic-next-vim'                 " colorscheme
     Plug 'drewtempelmeyer/palenight.vim'            " colorscheme
@@ -92,9 +91,9 @@ let g:gruvbox_contrast_dark = 'hard'
 
 " Minimap Config
 
-let g:minimap_width = 10
-let g:minimap_auto_start = 1
-let g:minimap_auto_start_win_enter = 1
+"let g:minimap_width = 10
+"let g:minimap_auto_start = 1
+"let g:minimap_auto_start_win_enter = 1
 
 " Complete symbols
 
@@ -145,7 +144,7 @@ let filename = @%
 
 " shortcuts to run different projects
 
-nnoremap gr :!go run .  
+nnoremap gr :!go run .
 nnoremap cr :!gcc -o % %
 
 "augroup PolyVim 
@@ -168,14 +167,14 @@ endif
 
 set background=dark
 
-"colorscheme palenight
+colorscheme palenight
 "colorscheme gruvbox
-colorscheme oceanicnext
+"colorscheme oceanicnext
 "colorscheme monokai
 "colorscheme onedark
 "colorscheme tokyobones
 "colorscheme phosphor
 
-let g:airline_theme = "gruvbox"
+let g:airline_theme = "palenight"
 
 hi Normal guibg=NONE ctermbg=NONE
