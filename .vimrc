@@ -78,6 +78,8 @@ let g:palenight_terminal_italics = 1
 
 let g:airline_powerline_fonts    = 1
 
+let g:airline#extensions#whitespace#enabled = 0
+
 if executable('rg')
     let g:rg_derive_root='true'
 endif
@@ -88,6 +90,11 @@ let g:netrw_browse_split = 2
 let g:netrw_winsize = 25
 
 let g:gruvbox_contrast_dark = 'hard'
+
+" Set python support
+
+let g:python3_host_prog = 'path/to/python3'
+let g:python2_host_prog = 'path/to/python2'
 
 " Minimap Config
 
