@@ -44,7 +44,7 @@ alias mod1="feh --bg-fill ~/data/pictures/wallpapers/anon.jpg"
 alias kssh="kitty +kitten ssh"
 alias potion="/home/arch/.potion/bin/potion"
 alias clean="rm -rf ~/Documents && rm -rf ~/Desktop && rm -rf ~/Downloads && rm ~/dump.rdb && rm ~/slw.saves && rm ~/backup.lock && rm ~/salwyrr.properties.backup" 
-alias cat="cat -v" # avoids escape injections
+alias cat="cat -v" # avoid escape injections
 
 # Start the starship prompt
 #eval "$(starship init bash)"
