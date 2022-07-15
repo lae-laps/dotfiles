@@ -43,8 +43,8 @@ alias commit="git add --all && git commit -m" # needs description
 alias mod1="feh --bg-fill ~/data/pictures/wallpapers/anon.jpg"
 alias kssh="kitty +kitten ssh"
 alias potion="/home/arch/.potion/bin/potion"
-alias clean="rm -rf ~/Documents && rm -rf ~/Desktop && rm -rf ~/Downloads && rm ~/dump.rdb && rm ~/slw.saves && rm ~/backup.lock && rm ~/salwyrr.properties.backup" 
-alias cat="cat -v" # avoid escape injections
+alias clean="rm -r ~/Documents;  rm -r ~/Desktop;  rm -r ~/Downloads;  rm ~/dump.rdb;  rm ~/slw.saves;  rm ~/backup.lock;  rm ~/salwyrr.properties.backup" 
+alias cat="cat -v" # this avoids escape injections
 
 # Start the starship prompt
 #eval "$(starship init bash)"
