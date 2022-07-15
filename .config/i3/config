@@ -15,10 +15,13 @@ exec_always --no-startup-id picom --experimental-backend -f
 exec --no-startup-id xinput set-prop "Synaptics TM3289-021" "libinput Tapping Enabled" 1
 
 # Set wallpaper
-#exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
+#exec --no-startup-id feh --randomize --bg-fill $HOME/data/pictures/wallpapers/*
 #exec --no-startup-id feh --bg-fill $HOME/data/pictures/darkfox.png
 #exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/parrot.jpg
-exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/default.jpg
+exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/africa.jpg
+
+# Enable tap to click
+exec --no-startup-id xinput set-prop "Synaptics TM3289-021" "libinput Tapping Enabled" 1
 
 ## Colors
 # Set colors from xrdb. Colors must be set in xrdb before i3 config is loaded.
@@ -268,7 +271,7 @@ bindsym $mod+Ctrl+Right resize shrink width 5 px or 5 ppt
 
 # Applications
 
-bindsym Print				exec --no-startup-id flameshot 
+bindsym Print				exec --no-startup-id flameshot gui
 bindsym $mod+Ctrl+Return	exec --no-startup-id pcmanfm
 bindsym $mod+m              exec --no-startup-id ~/.config/rofi/powermenu
 #bindsym $mod+n              exec --no-startup-id i3lock -i $HOME/data/pictures/wallpapers/borealis.jpg
@@ -284,7 +287,7 @@ bindsym $mod+Shift+u    exec setxkbmap -layout es
 gaps inner 8
 gaps outer 2
 
-smart_gaps on
+#smart_gaps on
 smart_borders on
 
 workspace 10 gaps inner 16
