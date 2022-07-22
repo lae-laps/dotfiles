@@ -1,5 +1,4 @@
 # i3 config made by laelaps
-
 exec --no-startup-id $HOME/scripts/16script/16script.sh $(< ~/.cache/16script/lastuse)
 
 # start dunst notification daemon
@@ -18,10 +17,12 @@ exec --no-startup-id xinput set-prop "Synaptics TM3289-021" "libinput Tapping En
 #exec --no-startup-id feh --randomize --bg-fill $HOME/data/pictures/wallpapers/*
 #exec --no-startup-id feh --bg-fill $HOME/data/pictures/darkfox.png
 #exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/parrot.jpg
-exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/africa.jpg
+#exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/africa.jpg
+exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/tux.png
 
-# Enable tap to click
+# Enable tap to click and set Key Repetition speed
 exec --no-startup-id xinput set-prop "Synaptics TM3289-021" "libinput Tapping Enabled" 1
+exec --no-startup-id xset r rate 156 55
 
 ## Colors
 # Set colors from xrdb. Colors must be set in xrdb before i3 config is loaded.
@@ -284,7 +285,7 @@ bindsym $mod+Shift+u    exec setxkbmap -layout es
 
 ## Define custom gaps
 
-gaps inner 8
+gaps inner 6
 gaps outer 2
 
 #smart_gaps on
