@@ -9,14 +9,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # set language to solve wrapp-around problems 
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 #PS1="\033[38;5;82m \w\033[m \033[38;5;9m$prompt_end \033[m"
-PS1="\033[38;5;27m \w\033[m \033[38;5;196m# \033[m"
+PS1="\[\033[38;5;27m\] \w\[\033[m\] \[\033[38;5;196m\]# \[\033[m\]"
 
 export PATH=${HOME}/tools/vim/bin:$PATH
 
@@ -43,7 +42,7 @@ alias commit="git add --all && git commit -m" # needs description
 alias mod1="feh --bg-fill ~/data/pictures/wallpapers/anon.jpg"
 alias kssh="kitty +kitten ssh"
 alias potion="/home/arch/.potion/bin/potion"
-alias clean="rm -r ~/Documents;  rm -r ~/Desktop;  rm -r ~/Downloads;  rm ~/dump.rdb;  rm ~/slw.saves;  rm ~/backup.lock;  rm ~/salwyrr.properties.backup" 
+alias clean="rm -r ~/Documents;  rm -r ~/Desktop;  rm -r ~/Downloads;  rm ~/dump.rdb;  rm ~/slw.saves;  rm ~/backup.lock;  rm ~/salwyrr.properties.backup; rm -r ~/Public; rm -r ~/Templates; rm -r ~/Music" 
 alias cat="cat -v" # this avoids escape injections
 
 # Start the starship prompt
