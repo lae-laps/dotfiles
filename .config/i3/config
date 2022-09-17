@@ -18,13 +18,13 @@ exec --no-startup-id xinput set-prop "Synaptics TM3289-021" "libinput Tapping En
 #exec --no-startup-id feh --bg-fill $HOME/data/pictures/darkfox.png
 #exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/parrot.jpg
 #exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/africa.jpg
-exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/midnight-train.png
+exec --no-startup-id feh --bg-fill $HOME/data/pictures/wallpapers/gradient2.png
 
 # Enable tap to click and set Key Repetition speed
 
 exec_always --no-startup-id /home/arch/.start.sh
 #exec --no-startup-id xinput set-prop "Synaptics TM3289-021" "libinput Tapping Enabled" 1
-exec --no-startup-id xset r rate 156 55
+exec --no-startup-id xset r rate 186 55
 
 ## Colors
 # Set colors from xrdb. Colors must be set in xrdb before i3 config is loaded.
@@ -116,6 +116,11 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# when using an external keyboard - still not working
+bindsym $mod+{ exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym $mod+} exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+# ===============================
+
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 20%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 20%-
 
@@ -135,6 +140,8 @@ bindsym $mod+Tab workspace back_and_forth
 # start dmenu / rofi (a program launcher)
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 bindsym $mod+d exec --no-startup-id rofi -show drun
+
+#bindsym $mod+j exec --no-startup-id rofi -show window
 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -291,8 +298,8 @@ bindsym $mod+Shift+u    exec setxkbmap -layout es
 
 ## Define custom gaps
 
-gaps inner 10
-gaps outer 2
+gaps inner 8
+gaps outer 1
 
 #smart_gaps on
 smart_borders on
@@ -303,6 +310,7 @@ for_window [class="kitty" instance="kitty"] smart_gaps on
 
 for_window [class="feh" instance="feh"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
+for_window [instance="main"] floating enable
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
