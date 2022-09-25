@@ -18,17 +18,24 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nu
+set ic
 set nowrap
 set smartcase
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
-set incsearch
+set incsearch                   " incremental searching
+"set hlsearch                    " continuous searching
 "set paste
 set colorcolumn=500
+set ttimeoutlen=0
 
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+set termwinsize=28x0            " set terminal size
+set splitbelow                  " always split terminals below
+set mouse=a                     " enable mouse drag on window splits
+
+"highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -45,24 +52,29 @@ call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
 "    Plugin 'Valloric/YouCompleteMe'
 call vundle#end()           
+
+call pathogen#infect()
+
 filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
-    Plug 'preservim/nerdtree'                       " nerdtree itself
+    Plug 'preservim/nerdtree'                       " nerdtree 
     Plug 'ryanoasis/vim-devicons'                   " icons for nerdtree
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " improve nerdtree icons with colors
     Plug 'VundleVim/Vundle.vim'                     " git plugin
-    "Plug 'wfxr/minimap.vim'                         " minimap like VsCode in right
-    "    Plug 'Valloric/YouCompleteMe'                  " code completion  
+    "Plug 'wfxr/minimap.vim'                        " minimap like VsCode in right
+    Plug 'Valloric/YouCompleteMe'                   " code completion  
     Plug 'adrian5/oceanic-next-vim'                 " colorscheme
     Plug 'drewtempelmeyer/palenight.vim'            " colorscheme
     Plug 'morhetz/gruvbox'                          " colorscheme
+    Plug 'arcticicestudio/nord-vim'                 " colorscheme
     Plug 'Yggdroot/indentLine'                      " Indent lines
     Plug 'vim-airline/vim-airline'                  " Status line
-    Plug 'jremmen/vim-ripgrep'
-    Plug 'tpope/vim-fugitive'
-    Plug 'leafgarland/typescript-vim'
-    Plug 'vim-utils/vim-man'
+    Plug 'haya14busa/incsearch.vim'                 " Incremental Searching (multiple highlightings at once, etc...)
+    Plug 'tpope/vim-fugitive'                       " GIT wrapper
+    "Plug 'leafgarland/typescript-vim'              " typescript for vim
+    Plug 'vim-utils/vim-man'                        " View man pages from within vim
+    Plug 'preservim/tagbar'                         " File Structure Viewer
     Plug 'lyuts/vim-rtags'
     Plug 'mbbill/undotree'
 call plug#end()
@@ -102,6 +114,13 @@ let g:python2_host_prog = 'path/to/python2'
 "let g:minimap_auto_start = 1
 "let g:minimap_auto_start_win_enter = 1
 
+" Tagbar Config
+
+nmap <F3> :TagbarToggle<CR>                     
+let g:tagbar_autofocus = 1                      " focus the bar on opening it
+"let g:tagbar_autoshowtag = 1                   " highlight active bar
+let g:tagbar_position = 'botright vertical'     " make vertical and put in right
+
 " Complete symbols
 
 "inoremap ( ()<Esc>i
@@ -128,31 +147,52 @@ nmap <silent> <c-l> :wincmd l<CR>
 
 nmap <F2> :NERDTreeToggle<CR>
 
+let NERDTreeMinimalMenu = 1
+let NERDTreeWinSize = 31
+
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>m :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <silent>ps :Rg<SPACE>
 nnoremap <Leader> <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader> <Leader>- :vertical resize -5<CR>
 
+" Incremental Searching
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+" vim-grep
+
+map <leader>k <Plug>(Man)
+map <leader>v <Plug>(Vman)
 
 " YCM
 
-"nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
-"nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
+nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+
+let g:ycm_autoclose_preview_window_after_insertion = 1
+set completeopt-=preview
 
 " Key remaps
+" better to keep them normal
 
-noremap ; l
-noremap l k
-noremap k j
-noremap j h
+"noremap ; l
+"noremap l k
+"noremap k j
+"noremap j h
 
 let filename = @% 
+
+" mapping to open a terminal window -> tt
+
+nnoremap tt :term<CR>
 
 " shortcuts to run different projects
 
 nnoremap gr :!go run .
-nnoremap cr :!gcc -o % %
+nnoremap cr :!gcc % -o %.out && ./%.out
 
 "augroup PolyVim 
  "   autocmd!
@@ -181,7 +221,11 @@ colorscheme palenight
 "colorscheme onedark
 "colorscheme tokyobones
 "colorscheme phosphor
+"colorscheme nord
+"colorscheme badwolf
 
 let g:airline_theme = "palenight"
 
 hi Normal guibg=NONE ctermbg=NONE
+"highlight LineNr ctermfg=NONE ctermbg=NONE
+"
