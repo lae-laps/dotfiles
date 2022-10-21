@@ -10,6 +10,7 @@
 set encoding=utf-8
 
 syntax on
+syntax enable
 
 set cursorline
 set noerrorbells
@@ -28,6 +29,7 @@ set undofile
 set incsearch                   " incremental searching
 "set hlsearch                    " continuous searching
 "set paste
+"set conceallevel=0
 set colorcolumn=500
 set ttimeoutlen=0
 
@@ -72,9 +74,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'                  " Status line
     Plug 'haya14busa/incsearch.vim'                 " Incremental Searching (multiple highlightings at once, etc...)
     Plug 'tpope/vim-fugitive'                       " GIT wrapper
+    Plug 'lervag/vimtex'                            " plugin for LaTeX
     "Plug 'leafgarland/typescript-vim'              " typescript for vim
     Plug 'vim-utils/vim-man'                        " View man pages from within vim
-    Plug 'preservim/tagbar'                         " File Structure Viewer
+    "Plug 'preservim/tagbar'                        " File Structure Viewer
     Plug 'lyuts/vim-rtags'
     Plug 'mbbill/undotree'
 call plug#end()
@@ -84,7 +87,6 @@ call plug#end()
 "let g:ycm_python_binary_path='/usr/bin/python3'
 
 let g:indentLine_faster          = 1
-let g:indentLine_setConceal      = 1 
 
 let g:palenight_terminal_italics = 1
 
@@ -103,10 +105,26 @@ let g:netrw_winsize = 25
 
 let g:gruvbox_contrast_dark = 'hard'
 
+" vimTeX config 
+
+"filetype plugin indent on
+
+set conceallevel=0
+
+let g:tex_flavor = 'latex'
+
+let g:vimtex_view_method = 'zathura'                                                    " set the viewer to zathura 
+
+let g:vimtex_syntax_conceal_disable = 1
+
+"nmap <F12> :VimtexCompile<CR>                                                           
+
+" default latex run is set to latexmk
+
 " Set python support
 
-let g:python3_host_prog = 'path/to/python3'
-let g:python2_host_prog = 'path/to/python2'
+"let g:python3_host_prog = 'path/to/python3'
+"let g:python2_host_prog = 'path/to/python2'
 
 " Minimap Config
 
