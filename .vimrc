@@ -80,6 +80,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'preservim/tagbar'                        " File Structure Viewer
     Plug 'lyuts/vim-rtags'
     Plug 'mbbill/undotree'
+    Plug 'kshenoy/vim-signature'
 call plug#end()
 
 "let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
