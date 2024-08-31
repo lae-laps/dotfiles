@@ -35,6 +35,8 @@ and move all the contents to your home
 
 ![error displaying image -> images/new.png](images/new.png?raw=true "Title")
 
+![error displaying image -> images/desktop.png](images/desktop.png?raw=true "Title")
+
 ![error displaying image -> images/desktop_grey.png](images/desktop_grey.png?raw=true "Title")
 
 ![error displaying image -> images/blue-minimalist.png](images/blue-minimalist.png?raw=true "Title")
@@ -44,3 +46,4 @@ and move all the contents to your home
 ![error displaying image -> images/desktop_transparent.png](images/desktop_transparent.png?raw=true "Title")
 
 ![error displaying image -> images/btop.png](images/btop.png?raw=true "Title")
+
